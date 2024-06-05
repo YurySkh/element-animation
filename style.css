@@ -1,0 +1,75 @@
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	font-family: sans-serif;
+	margin-bottom: 100px;
+}
+
+.progress-bady {
+	width: 600px;
+	height: 50px;
+	background-color: rgb(246, 246, 240);
+	border: 4px solid silver;
+	border-radius: 50px;
+	padding: 5px;
+}
+
+.progress-bady::before {
+	content: "";
+	display: inline-block;
+
+	background-color: lightgreen;
+	border-radius: 50px;
+	height: 50px;
+	width: 50%;
+
+	animation: animationInProgress 2s linear 1s 3 alternate both;
+}
+
+/*
+.progress-line {
+	background-color: lightgreen;
+	border-radius: 50px;
+	height: 50px;
+	width: 50%;
+
+	transition: width 2s 1s ease-in-out, 
+					background-color 2s 1.1s; 
+
+	animation: animationInProgress 2s linear 1s 3 alternate both;
+}
+
+.progress-line:hover {
+	 width: 100%;
+	background-color: plum; 
+
+	animation-play-state: paused;
+}
+*/
+
+@keyframes animationInProgress {
+	from {
+		width: 50%;
+		background-color: rgb(144, 149, 238);
+	}
+
+	34.9% {
+		background-color: lightgreen;
+	}
+
+	35% {
+		background-color: plum;
+	}
+
+	to {
+		width: 100%;
+		background-color: plum;
+	}
+}
